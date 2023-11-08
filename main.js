@@ -120,7 +120,7 @@ pog4.rotation.y -= .00;
 pog5.rotation.x -= .00;
 pog5.rotation.z -= .01;
 
-camera.position.z -= .03
+camera.position.z += .03
 }
 
 
@@ -129,7 +129,6 @@ function animate(time) {
   requestAnimationFrame( animate );
 
   document.body.onscroll = moveCamera;
-  moveCamera();
 
   renderer.render( scene, camera)
 }

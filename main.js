@@ -123,13 +123,13 @@ pog5.rotation.z -= .01;
 camera.position.z -= .03
 }
 
-document.body.onscroll = moveCamera;
-moveCamera();
+
 
 function animate(time) {
   requestAnimationFrame( animate );
 
-
+  document.body.onscroll = moveCamera;
+  moveCamera();
 
   renderer.render( scene, camera)
 }

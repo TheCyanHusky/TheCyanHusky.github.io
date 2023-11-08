@@ -1,6 +1,6 @@
 import './style.css'
 
-import * as THREE from './ThreeJSPortfolio/three.module.js'
+import * as THREE from './three.module.js'
 
 const scene = new THREE.Scene();
 

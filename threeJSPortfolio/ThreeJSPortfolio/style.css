@@ -1,0 +1,17 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  display: block;
+  font-size: xx-large;
+}
+
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+main {
+  position: absolute;
+  
+}

@@ -1,8 +1,5 @@
-import './style.css'
 
-import * as THREE from 'three'
-
-import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
+import * as THREE from './ThreeJSPortfolio/three.module.js'
 
 const scene = new THREE.Scene();
 
@@ -102,7 +99,6 @@ const axesHelper = new THREE.AxesHelper(20, 20, 20)
 
 scene.add(lightHelper, gridHelper, axesHelper)
 
-const controls = new OrbitControls(camera, renderer.domElement);
 
 pog2.rotation.y += 315;
 

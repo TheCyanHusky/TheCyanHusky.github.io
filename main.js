@@ -101,10 +101,9 @@ const axesHelper = new THREE.AxesHelper(20, 20, 20)
 
 pog2.rotation.y += 315;
 
-function animate(time) {
-  requestAnimationFrame( animate );
-
-pog.rotation.x += .00;
+function moveCamera() {
+  const t = document.body.getBoundingClientRect().top;
+  pog.rotation.x += .00;
 pog.rotation.y -= .00;
 pog.rotation.z += .04;
 
@@ -120,6 +119,17 @@ pog4.rotation.y -= .00;
 
 pog5.rotation.x -= .00;
 pog5.rotation.z -= .01;
+
+camera.position.z -= .03
+}
+
+document.body.onscroll = moveCamera;
+moveCamera();
+
+function animate(time) {
+  requestAnimationFrame( animate );
+
+
 
   renderer.render( scene, camera)
 }

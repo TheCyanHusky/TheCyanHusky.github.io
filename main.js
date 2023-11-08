@@ -121,8 +121,6 @@ pog4.rotation.y -= .00;
 pog5.rotation.x -= .00;
 pog5.rotation.z -= .01;
 
-controls.update();
-
   renderer.render( scene, camera)
 }
 

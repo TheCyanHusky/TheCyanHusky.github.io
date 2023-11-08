@@ -96,7 +96,7 @@ const gridHelper = new THREE.GridHelper(200, 50)
 
 const axesHelper = new THREE.AxesHelper(20, 20, 20)
 
-scene.add(lightHelper, gridHelper, axesHelper)
+// scene.add(lightHelper, gridHelper, axesHelper)
 
 
 pog2.rotation.y += 315;

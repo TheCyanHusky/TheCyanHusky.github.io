@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="links/PasswordManager/public/css/passman.css">
+    <title>Matthew's Password Garage</title>
+</head>
+
+<body>
+
+    <div id="userInputSite" class="Managed">
+        <form action="/submit" method="POST" name="inForm">
+            <label for="sName">Insert name of passwords application</lable><br>
+
+                <input type="text" name="sName" id="sName"><br>
+
+                <p></p>
+
+                <label for="Password">Insert applications Password
+            </label><br>
+
+            <input type="password" name="Password" id="Password"><br>
+
+            <p></p>
+
+            <input type="submit" value="Submit">
+            <!-- <button onclick="submit()">text</button><br> -->
+        </form>
+    </div>
+
+    <div id="queryBox">
+        <form action="/query" method="POST" name="inForm">
+            <label for="sQuery">Insert name of the application</lable><br>
+
+                <input type="text" name="sQuery" id="sQuery"><br>
+
+                <input type="submit" value="Submit">
+        </form>
+
+    </div>
+
+    <script src="links\PasswordManager\public\js\passman.js"></script>
+
+</body>
+
+</html>

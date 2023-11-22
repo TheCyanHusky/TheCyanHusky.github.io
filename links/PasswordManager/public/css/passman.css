@@ -1,0 +1,15 @@
+body {
+    padding-top: 30px;
+    padding-left: 40px;
+    background-image: url('links/PasswordManager/public/images/Background.jpg');
+    background-size: cover;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 36px;
+}
+
+div {
+    width: 585px;
+    padding: 10px;
+    border: 5px solid rgb(9, 116, 255);
+    margin: 50px;
+}

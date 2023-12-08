@@ -1,0 +1,46 @@
+<Trait Sets>
+ Element:    name
+ SubElement: name
+ Gender:     name
+ Race:       name
+ Nature:     name
+ Alignment:  name
+ Blessing:   name
+ Curse:      name
+ Zodiac:     name
+ Variant:    name
+</Trait Sets>
+
+<Biography>
+ text
+ text
+ text
+</Biography>
+
+Gender:
+Male, Female, Both
+
+Race:
+Human, High Elf, Wood Elf, Dark Elf, Dwarf, Gnome, Halfling, Wolfkin, Felyne, Lizardman
+
+Nature:
+Hardy, Lonely, Adamant, Naughty, Brave, Bold, Docile, Impish, Lax, Relaxed, Modest, Mild, Bashful, Rash, Quite, Calm, Gentle, Careful, Quirky, Sassy, Timid, Hasty, Jooly, Naive, Serious
+
+Alignment:
+Lawful Good, Neutral Good, Chaotic Good, Lawful Neutral, Chaotic Neutral, Lawful Evil, Neutral Evil, Chaotic Evil
+
+Blessings:
+Dextrous, Elusive, Impact, Healthy, Focused, Energetic
+
+Curses: 
+Clumsy, Dazed, Fitful, Drained, Inefficient, Unmotivated
+
+Zodiac:
+Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius, Pisces, Ophiuchus
+
+Varient (just a Omni boost or debuff):
+Mighty, Major, Greater, Lesser, Minor, Puny
+
+
+Enemy name:
+[alignment] [variant] [nature] [element] [name][gender] [letter]

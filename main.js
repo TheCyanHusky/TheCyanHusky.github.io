@@ -14,8 +14,7 @@ camera.position.z = 30;
 
 // creata list of images in the img folder
 let imgList = [
-    'RWS_Tarot_16_Tower.png',
-    'Lemstrosity.png'
+    
 ]
 
 // add every listed image as a plane mesh with texture to scene

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../TheCyanHusky.github.io/TheCyanHusky.github.io"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Github.io"
+	}
+}

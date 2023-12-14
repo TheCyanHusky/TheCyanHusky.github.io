@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+    <div id="scoreBox">
+
+    </div>
+
+    <div id="timerBox">
+
+    </div>
+
+    <div id="directionBox">
+
+    </div>
+
+    Press button on controller to connect.
+    <div id="axes" style="display: flex; flex-direction: column;"></div>
+    <div id="buttons" style="display: flex; flex-direction: column;"></div>
+    <script>
+        const gamepad = navigator.getGamepads()
+
+        var score = 0
+
+        var direction = 0
+
+        var timer = 20
+
+        var lastState = false;
+
+
+        // React to a new controller being found, and add it to 'gamepad' list
+        window.addEventListener('gamepadconnected', (event) => {
+            //Set up function to loop
+            const update = () => {
+                const gamepad = navigator.getGamepads()
+                
+                //Should stop people from holding down the button
+                
+
+                if (gamepad[0].buttons[0].pressed != lastState) {
+                    lastState = gamepad[0].buttons[0].pressed
+                    if (lastState) {
+
+                        //If the first gamepad's A button is pressed
+                        if (gamepad[0].buttons[0].pressed) {
+                            console.log(gamepad[0].axes[1]);
+                            if (timer > 0) {
+                                switch (direction) {
+                                    //up
+                                    case 0:
+                                        if (gamepad[0].axes[1] == -1) {
+                                            score += 1
+                                        }
+                                        break;
+                                    //right
+                                    case 1:
+                                        if (gamepad[0].axes[0] == 1) {
+                                            score += 1
+                                        }
+                                        break;
+                                    //down
+                                    case 2:
+                                        if (gamepad[0].axes[1] == 1) {
+                                            score += 1
+                                        }
+                                        break;
+                                    //left
+                                    case 3:
+                                        if (gamepad[0].axes[0] == -1) {
+                                            score += 1
+                                        }
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                        }
+                    }
+
+                    document.getElementById("scoreBox").innerHTML = "score: " + score;
+                    console.log(score)
+
+                }
+                //Press Start and refresh the page
+
+                if(gamepad[0].buttons[9].pressed) {
+                    location.reload()
+                }
+
+                //Tell this function to loop itself every game frame
+                requestAnimationFrame(update);
+            }
+            //kick off the function for the first time to start loop
+            update();
+        });
+
+        //Function to decrease time by 1, and update window
+        function timeTick() {
+            if (timer > 0) {
+                timer -= 1
+                let timerBox = document.getElementById("timerBox")
+                timerBox.innerHTML = "Timer: " + timer;
+            }
+        }
+        //Set the timer for ticking
+        setInterval(timeTick, 1000)
+
+        // Change the direction of pressing goal
+        function directionCheck() {
+            // Generate random direction
+            direction = Math.floor(Math.random() * 4)
+            //Find the correct direction name
+            if (direction == 0) {
+                document.getElementById("directionBox").innerHTML = "up"
+            }
+            if (direction == 1) {
+                document.getElementById("directionBox").innerHTML = "right"
+            }
+            if (direction == 2) {
+                document.getElementById("directionBox").innerHTML = "down"
+            }
+            if (direction == 3) {
+                document.getElementById("directionBox").innerHTML = "left"
+            }
+        }
+        //Set timer for changing direction
+        window.setInterval(directionCheck, 2000);
+
+
+    </script>
+
+</body>
+
+</html>

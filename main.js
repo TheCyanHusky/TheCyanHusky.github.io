@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
 //Starting postion of the images from the top
-const STARTY = 20;
+const STARTY = 10;
 
 //create a new scene
 const scene = new THREE.Scene();
@@ -14,7 +14,8 @@ camera.position.z = 30;
 
 // creata list of images in the img folder
 let imgList = [
-    
+    "Quarter12023-2024.png",
+    "Quarter42022-2023.png"
 ]
 
 // add every listed image as a plane mesh with texture to scene
@@ -22,7 +23,7 @@ for (const image in imgList) {
     console.log(image);
 
     //every mesh has a geometry, texture, and material
-    const geometry = new THREE.PlaneGeometry(20, 30);
+    const geometry = new THREE.PlaneGeometry(25, 15);
     const texture = new THREE.TextureLoader().load('img/' + imgList[image]);
     const material = new THREE.MeshBasicMaterial(
         {
@@ -54,17 +55,19 @@ function resizeWindow() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     // adjust for phone or desktop size
     if (window.innerWidth <= 600) {
-        camera.position.x = -6
+        camera.position.x = 0
         for (const child in scene.children) {
             scene.children[child].rotation.y = 0;
             scene.children[child].position.y = child * -50
+            scene.children[child].position.x = 0;
         }
     }
     else {
-        camera.position.x = 15;
+        camera.position.x = 0;
         for (const child in scene.children) {
             scene.children[child].rotation.y = 10 * (Math.PI / 180);
             scene.children[child].position.y = child * -40
+            scene.children[child].position.x = -25;
         }
 
     }

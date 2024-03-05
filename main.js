@@ -5,8 +5,7 @@ const STARTY = 10;
 
 //create a new scene
 const scene = new THREE.Scene();
-scene.background = new THREE.TextureLoader().load("img/portfolioBackdrop.png")
-
+scene.background = new THREE.Color().set('lightblue');
 //create amd position the camera
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.y = STARTY;

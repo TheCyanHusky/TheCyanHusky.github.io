@@ -1,17 +1,32 @@
 import * as THREE from 'three';
 
-//Starting postion of the images from the top
+//Starting position of the images from the top
 const STARTY = 10;
 
 //create a new scene
 const scene = new THREE.Scene();
 scene.background = new THREE.Color().set('lightblue');
-//create amd position the camera
+//create and position the camera
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.y = STARTY;
 camera.position.z = 30;
 
-// creata list of images in the img folder
+// Load the texture
+const cylinderTexture = new THREE.TextureLoader().load('img/Cylinder-spin.png');
+
+// Create a cylinder geometry
+const cylinderGeometry = new THREE.CylinderGeometry(250, 250, 350, 32);
+const cylinderMaterial = new THREE.MeshBasicMaterial({map: cylinderTexture});
+const cylinder = new THREE.Mesh(cylinderGeometry, cylinderMaterial);
+
+// Position the cylinder
+cylinder.position.z = -275;
+cylinder.position.x = 0;
+
+// Add the cylinder to the scene
+scene.add(cylinder);
+
+// create a list of images in the img folder
 let imgList = [
     "Quarter12023-2024.png",
     "Quarter42022-2023.png"
@@ -87,6 +102,10 @@ document.body.appendChild(renderer.domElement);
 // animation loop (calls itself recursively)
 function animate() {
     requestAnimationFrame(animate);
+
+    // Update the rotation of the cylinder
+    cylinder.rotation.y += 0.01;
+
     renderer.render(scene, camera);
 }
 
